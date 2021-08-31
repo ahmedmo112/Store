@@ -116,11 +116,10 @@ class _DetailScreenState extends State<DetailScreen> {
 
               ),
           )),
-          //! سكرول بدل اكسباندد
            Expanded(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -257,61 +256,39 @@ class _DetailScreenState extends State<DetailScreen> {
                         )
                       ],
                     ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Berrylush is a casualwear In Wastern syle that is",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xffb2b2b2),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Text(
-                          "relaxed,occasinal and suited fir everyday use.",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Color(0xffb2b2b2),
-                          ),
-                        )
-                      ],
-                    ),
-                    Expanded(
-                      child: MaterialButton(
-                        onPressed: () {},
-                        height: 66,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0)),
-                        textColor: Colors.white,
-                        padding: EdgeInsets.all(0.0),
-                        child: Container(
-                          height: 66,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20.0),
-                            gradient: LinearGradient(
-                              colors: [
-                                Color(0xff9f91cc),
-                                Color(0xff8471bb),
-                              ],
-                            ),
-                          ),
-                          padding: EdgeInsets.all(10.0),
-                          child: Center(
-                            child: Text(
-                              "Add to Cart\t\t\t\$120",
+                    Container(
+                      width: double.infinity,
+
+                      height: 80,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Berrylush is a casualwear In Wastern syle that is",
                               style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                                color: Color(0xffb2b2b2),
                               ),
                             ),
-                          ),
+                            SizedBox(
+                              height: 10.0,
+                            ),
+                            Text(
+                              "relaxed,occasinal and suited fir everyday use.",
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Color(0xffb2b2b2),
+                              ),
+                            )
+                         
+                         
+                          ],
+
                         ),
                       ),
-                    )
+                    ),
+                   
                   ],
                 ),
               ),

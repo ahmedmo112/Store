@@ -126,90 +126,91 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-        StaggeredGridView.countBuilder(
-          crossAxisCount: 4,
-          itemCount: images.length,
-          primary: false,
-          shrinkWrap: true,
-          itemBuilder: (context, index) => GestureDetector(
-              onTap: () {
-                navigateTo(context, DetailScreen());
-              },
-              child: Container(
-                padding: EdgeInsets.all(3),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                        fit: BoxFit.cover, image: AssetImage(images[index]))),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
-                          child: Container(
-                            height: 80,
-                            width: double.infinity,
-                            padding: EdgeInsets.symmetric(horizontal: 7.0),
-                            decoration: BoxDecoration(
-                              color: Colors.white12.withOpacity(0.1),
-                            ),
-                            child: Column(
-                              mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "Berrylush",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w600,
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: StaggeredGridView.countBuilder(
+            crossAxisCount: 4,
+            itemCount: images.length,
+            primary: false,
+            shrinkWrap: true,
+            itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  navigateTo(context, DetailScreen());
+                },
+                child: Container(
+                  padding: EdgeInsets.all(3),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                          fit: BoxFit.cover, image: AssetImage(images[index]))),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
+                            child: Container(
+                              height: 85.0,
+                              width: double.infinity,
+                              padding: EdgeInsets.symmetric(horizontal: 7.0),
+                              decoration: BoxDecoration(
+                                color: Colors.white12.withOpacity(0.1),
+                              ),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "Berrylush",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      "\$120",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
+                                      Text(
+                                        "\$120",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                Text(
-                                  "casual cottonamger",
-                                  style: TextStyle(
-                                    color: Colors.white,
+                                    ],
                                   ),
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(Icons.star, color: Colors.white),
-                                    Text(
-                                      "4.5",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      ),
+                                  Text(
+                                    "casual cottonamger",
+                                    style: TextStyle(
+                                      color: Colors.white,
                                     ),
-                                  ],
-                                )
-                              ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Icon(Icons.star, color: Colors.white),
+                                      Text(
+                                        "4.5",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                        ))
-                  ],
-                ),
-              )),
-          staggeredTileBuilder: (int index) {
-            StaggeredTile.count(2, index.isEven ? 3 : 2);
-        
-          },
-          mainAxisSpacing: 20.0,
-          crossAxisSpacing: 20.0,
+                          ))
+                    ],
+                  ),
+                )),
+            staggeredTileBuilder: (int index) =>
+              StaggeredTile.count(2, index.isEven ? 3 : 2),
+            mainAxisSpacing: 20.0,
+            crossAxisSpacing: 20.0,
+          ),
         )
       ],
     );
